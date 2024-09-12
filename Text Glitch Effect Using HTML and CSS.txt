@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+        h1 {
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            animation: glitch 1s infinite;
+        }
+        h1::before, h1::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            color: white;
+            background: black;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 1.5s infinite;
+        }
+        h1::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            animation-duration: 1s;
+        }
+        h1::after {
+            left: -2px;
+            text-shadow: -2px 0 blue;
+            animation-duration: 1.2s;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+                transform: skew(0.4deg);
+            }
+            20% {
+                clip: rect(15px, 9999px, 56px, 0);
+                transform: skew(0.3deg);
+            }
+            40% {
+                clip: rect(85px, 9999px, 140px, 0);
+                transform: skew(0.5deg);
+            }
+            60% {
+                clip: rect(35px, 9999px, 90px, 0);
+                transform: skew(0.6deg);
+            }
+            80% {
+                clip: rect(42px, 9999px, 44px, 0);
+                transform: skew(0.4deg);
+            }
+            100% {
+                clip: rect(15px, 9999px, 56px, 0);
+                transform: skew(0.3deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<h1 data-text="GLITCH">GLITCH</h1>
+
+
+</body>
+</html>
